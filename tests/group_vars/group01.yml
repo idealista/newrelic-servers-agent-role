@@ -1,0 +1,4 @@
+---
+newrelic_license_key: afakekey
+newrelic_service_enabled: no
+newrelic_service_state: stopped

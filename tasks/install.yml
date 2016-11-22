@@ -1,0 +1,23 @@
+---
+
+- name: Installing dependencies
+  apt:
+    pkg: apt-transport-https
+    state: present
+
+- name: Adding APT key
+  apt_key:
+    id: "{{ repository_key_id }}"
+    url: "{{ repository_key_url }}"
+
+- name: Add APT repository
+  apt_repository:
+    repo: "{{ repository_data }}"
+    update_cache: yes
+
+- name: Installing packages
+  apt:
+    pkg: "{{ item }}"
+    state: present
+  with_items:
+    - newrelic-sysmond

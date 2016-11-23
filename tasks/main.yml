@@ -1,0 +1,15 @@
+---
+
+- name: Checking for key
+  fail:
+    msg: "newrelic_license_key has not been defined"
+  when: newrelic_license_key|default(False) == False
+
+- include: install.yml
+
+- include: config.yml
+
+- include: service.yml
+
+- include: apm.yml
+  when: apm_enabled and application|default(False) != False

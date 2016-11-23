@@ -1,0 +1,30 @@
+repository_key_id: 548C16BF
+repository_key_url: "https://download.newrelic.com/{{ repository_key_id }}.gpg"
+repository_data: "deb http://apt.newrelic.com/debian/ newrelic non-free"
+
+
+newrelic_user: "newrelic"
+newrelic_group: "newrelic"
+newrelic_groups: []
+newrelic_logfile: /var/log/newrelic/nrsysmond.log
+newrelic_loglevel: info
+# Set to true to disable NFS client statistics gathering.
+newrelic_disable_nfs: yes
+# start on boot
+newrelic_service_enabled: yes
+# current state: started, stopped
+newrelic_service_state: started
+# use default hostname, set a value to override the default hostname
+newrelic_override_hostname: ~
+# A series of label_type/label_value pairings: label_type:label_value
+newrelic_labels:
+# proxy server to use (i.e. proxy-host:8080)
+newrelic_proxy:
+
+base_path: /opt
+newrelic_path: "{{ base_path }}/newrelic"
+
+apm_enabled: false
+apm_url: http://download.newrelic.com/newrelic/java-agent/newrelic-agent
+apm_version: current
+apm_file: newrelic-java.zip

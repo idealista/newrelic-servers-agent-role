@@ -1,0 +1,32 @@
+---
+
+- name: Install required packages
+  apt:
+    name: "{{ item }}"
+    force: yes
+    state: latest
+    update_cache: yes
+  with_items: "{{ required_libs }}"
+  tags:
+    skip_ansible_lint
+
+- name: APM | Download the Java agent
+  get_url:
+    url: "{{ apm_url }}/{{ apm_version }}/{{ apm_file }}"
+    dest: /tmp
+
+- name: APM | Extract the Java agent
+  unarchive:
+    src: "/tmp/{{ apm_file }}"
+    dest: "{{ base_path }}"
+    copy: no
+    owner: "{{ newrelic_user }}"
+    group: "{{ newrelic_group }}"
+    creates: "{{ newrelic_path }}"
+
+- name: APM | Configure the Java agent
+  template:
+    src: newrelic.yml.j2
+    dest: "{{ newrelic_path }}/newrelic.yml"
+    owner: "{{ newrelic_user }}"
+    group: "{{ newrelic_group }}"

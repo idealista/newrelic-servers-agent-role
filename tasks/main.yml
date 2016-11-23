@@ -10,3 +10,6 @@
 - include: config.yml
 
 - include: service.yml
+
+- include: apm.yml
+  when: apm_enabled and application|default(False) != False

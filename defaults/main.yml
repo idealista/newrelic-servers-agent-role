@@ -2,7 +2,6 @@ repository_key_id: 548C16BF
 repository_key_url: "https://download.newrelic.com/{{ repository_key_id }}.gpg"
 repository_data: "deb http://apt.newrelic.com/debian/ newrelic non-free"
 
-newrelic_license_key: #A_REAL_KEY
 
 newrelic_user: "newrelic"
 newrelic_group: "newrelic"
@@ -21,3 +20,11 @@ newrelic_override_hostname: ~
 newrelic_labels:
 # proxy server to use (i.e. proxy-host:8080)
 newrelic_proxy:
+
+base_path: /opt
+newrelic_path: "{{ base_path }}/newrelic"
+
+apm_enabled: false
+apm_url: http://download.newrelic.com/newrelic/java-agent/newrelic-agent
+apm_version: current
+apm_file: newrelic-java.zip

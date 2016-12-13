@@ -1,6 +1,6 @@
 ---
 
-- name: Configuring module
+- name: NEWRELIC | Configuring module
   template:
     src: "{{ item }}.j2"
     dest: "/{{ item }}"
@@ -11,7 +11,7 @@
   with_items:
     - "etc/newrelic/nrsysmond.cfg"
 
-- name: Configuring user groups
+- name: NEWRELIC | Configuring user groups
   user:
     name: "{{ newrelic_user }}"
     groups: "{{ newrelic_groups|join(',') }}"

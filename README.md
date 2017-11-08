@@ -17,7 +17,7 @@ This ansible role installs newrelic agent in a debian environment.
 
 ## Getting Started
 
-These instructions will get you a copy of the role for your ansible playbook. Once launched, it will install a [newrelic](https://newrelic.io/) server.
+These instructions will get you a copy of the role for your ansible playbook. Once launched, it will install a [newrelic](https://newrelic.com/) agent.
 
 ### Prerequisities
 

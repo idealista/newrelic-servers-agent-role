@@ -1,5 +1,5 @@
 ---
 
-- hosts: all
+- hosts: newrelic
   roles:
-    - role: newrelic-role
+    - newrelic-role

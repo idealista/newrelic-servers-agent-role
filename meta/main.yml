@@ -3,3 +3,10 @@ galaxy_info:
   company: Idealista
   min_ansible_version: 2.2
   description: Install New Relic agent service
+  license: Apache 2.0
+  platforms:
+    - name: Debian
+      versions:
+        - stretch
+  categories:
+    - logging

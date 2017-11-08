@@ -1,0 +1,8 @@
+package:
+  newrelic-sysmond:
+    installed: true
+
+service:
+  newrelic-sysmond:
+    enabled: true
+    running: false

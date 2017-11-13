@@ -22,4 +22,3 @@ newrelic_base_path: /opt
 newrelic_path: "{{ newrelic_base_path }}/newrelic"
 newrelic_enabled: false
 newrelic_version: current
-

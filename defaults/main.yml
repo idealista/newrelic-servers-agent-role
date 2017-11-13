@@ -24,7 +24,7 @@ newrelic_proxy:
 base_path: /opt
 newrelic_path: "{{ base_path }}/newrelic"
 
-apm_enabled: false
-apm_url: http://download.newrelic.com/newrelic/java-agent/newrelic-agent
-apm_version: current
-apm_file: newrelic-java.zip
+newrelic_enabled: false
+newrelic_url: http://download.newrelic.com/newrelic/java-agent/newrelic-agent
+newrelic_version: current
+newrelic_file: newrelic-java.zip

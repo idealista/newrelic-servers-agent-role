@@ -11,5 +11,5 @@
 
 - include: service.yml
 
-- include: apm.yml
-  when: apm_enabled and application|default(False) != False
+- include: newrelic.yml
+  when: newrelic_enabled and application|default(False) != False

@@ -1,2 +1,5 @@
-required_libs:
+newrelic_required_libs:
   - unzip
+  - apt-transport-https
+
+newrelic_java_agent_url: "{{ newrelic_url }}/{{ newrelic_version }}/{{ newrelic_file }}"

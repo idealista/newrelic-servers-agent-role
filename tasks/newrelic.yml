@@ -8,7 +8,7 @@
 - name: NEWRELIC | Extract the Java agent
   unarchive:
     src: "/tmp/{{ newrelic_file }}"
-    dest: "{{ base_path }}"
+    dest: "{{ newrelic_base_path }}"
     copy: no
     owner: "{{ newrelic_user }}"
     group: "{{ newrelic_group }}"

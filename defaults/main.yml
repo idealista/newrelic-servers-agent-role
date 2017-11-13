@@ -18,10 +18,8 @@ newrelic_labels:
 # proxy server to use (i.e. proxy-host:8080)
 newrelic_proxy:
 
-base_path: /opt
-newrelic_path: "{{ base_path }}/newrelic"
-
+newrelic_base_path: /opt
+newrelic_path: "{{ newrelic_base_path }}/newrelic"
 newrelic_enabled: false
-newrelic_url: http://download.newrelic.com/newrelic/java-agent/newrelic-agent
 newrelic_version: current
-newrelic_file: newrelic-java.zip
+

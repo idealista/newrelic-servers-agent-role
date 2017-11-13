@@ -3,3 +3,7 @@ newrelic_required_libs:
   - apt-transport-https
 
 newrelic_java_agent_url: "{{ newrelic_url }}/{{ newrelic_version }}/{{ newrelic_file }}"
+
+newrelic_repository_key_id: 548C16BF
+newrelic_repository_key_url: "https://download.newrelic.com/{{ newrelic_repository_key_id }}.gpg"
+newrelic_repository_data: "deb http://apt.newrelic.com/debian/ newrelic non-free"

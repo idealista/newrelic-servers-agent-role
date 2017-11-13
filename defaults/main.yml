@@ -1,7 +1,4 @@
-repository_key_id: 548C16BF
-repository_key_url: "https://download.newrelic.com/{{ repository_key_id }}.gpg"
-repository_data: "deb http://apt.newrelic.com/debian/ newrelic non-free"
-
+---
 
 newrelic_user: "newrelic"
 newrelic_group: "newrelic"

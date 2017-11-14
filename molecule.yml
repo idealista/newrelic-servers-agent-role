@@ -15,11 +15,14 @@ molecule:
     - .vagrant
     - .molecule
 
-  # directory to look for testinfra tests
-  testinfra_dir: tests
+  goss_dir: tests/goss
+  goss_playbook: verifier.yml
 
   # directory containing group_vars to use with ansible
   group_vars: ../tests/group_vars
+
+verifier:
+  name: goss
 
 # ansible related configuration
 ansible:
@@ -28,6 +31,10 @@ ansible:
 # configuration options for the internal call to vagrant
 vagrant:
   # molecule's --platform option will look for these names
+  raw_config_args:
+    - "landrush.enabled = true"
+    - "landrush.tld = 'vm'"
+    - "landrush.guest_redirect_dns = false"
   platforms:
     - name: Debian
       box: debian/jessie64
@@ -40,10 +47,25 @@ vagrant:
         cpus: 1
 
   instances:
-    - name: newrelic
+    - name: newrelic.vm
       ansible_groups:
-        - group01
+        - newrelic
       interfaces:
         - network_name: private_network
           type: dhcp
           auto_config: true
+
+docker:
+  containers:
+    - name: newrelic.cont
+      ansible_groups:
+        - newrelic
+      image: geerlingguy/docker-debian9-ansible
+      image_version: latest
+
+      privileged: True
+      cap_add:
+        - SYS_ADMIN
+      volume_mounts:
+        - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+      command: '/lib/systemd/systemd'

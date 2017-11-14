@@ -1,0 +1,22 @@
+---
+
+- name: NEWRELIC | Download the Java agent
+  get_url:
+    url: "{{ newrelic_java_agent_url }}"
+    dest: /tmp
+
+- name: NEWRELIC | Extract the Java agent
+  unarchive:
+    src: "/tmp/{{ newrelic_file }}"
+    dest: "{{ newrelic_base_path }}"
+    copy: no
+    owner: "{{ newrelic_user }}"
+    group: "{{ newrelic_group }}"
+    creates: "{{ newrelic_path }}"
+
+- name: NEWRELIC | Configure the Java agent
+  template:
+    src: newrelic.yml.j2
+    dest: "{{ newrelic_path }}/newrelic.yml"
+    owner: "{{ newrelic_user }}"
+    group: "{{ newrelic_group }}"

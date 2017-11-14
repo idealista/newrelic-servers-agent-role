@@ -1,6 +1,6 @@
 ---
 
-- name: Checking for key
+- name: NEWRELIC | Checking for key
   fail:
     msg: "newrelic_license_key has not been defined"
   when: newrelic_license_key|default(False) == False
@@ -11,5 +11,5 @@
 
 - include: service.yml
 
-- include: apm.yml
-  when: apm_enabled and application|default(False) != False
+- include: newrelic.yml
+  when: newrelic_enabled and application|default(False) != False

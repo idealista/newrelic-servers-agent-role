@@ -4,6 +4,6 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 
 ## [Unreleased](https://github.com/idealista/newrelic-role/tree/develop)
 
-## [1.0.0]
+## [1.0.0](https://github.com/idealista/newrelic-role/releases/tag/1.0.0)
 ### Added
-- *First release*
+- *First release* @jdvega

@@ -1,3 +1,23 @@
 package:
   newrelic-sysmond:
     installed: true
+
+file:
+  {{ newrelic_path }}/newrelic.jar:
+    exists: true
+    mode: "0664"
+    size: 10520255
+    owner: newrelic
+    group: newrelic
+    filetype: file
+    contains: []
+  {{ newrelic_path }}/newrelic.yml:
+    exists: true
+    mode: "0664"
+    size: 12315
+    owner: newrelic
+    group: newrelic
+    filetype: file
+    contains:
+      - {{ application }}
+      - {{ newrelic_license_key }}

@@ -1,18 +1,23 @@
 ---
 
-- name: NEWRELIC | Download the Java agent
-  get_url:
-    url: "{{ newrelic_java_agent_url }}"
-    dest: /tmp
+- name: NEWRELIC | Ensure install path
+  file:
+    path: "{{ newrelic_path }}"
+    state: directory
 
-- name: NEWRELIC | Extract the Java agent
+- name: NEWRELIC | Check if newrelic is installed
+  stat:
+    path: "{{ newrelic_path }}/newrelic.jar"
+  register: newrelic_jar_exists
+
+- name: NEWRELIC | Download & Extract agent
   unarchive:
-    src: "/tmp/{{ newrelic_file }}"
-    dest: "{{ newrelic_base_path }}"
-    copy: no
+    src: "{{ newrelic_java_agent_url }}"
+    remote_src: yes
+    dest: "{{ newrelic_base_path }}/"
     owner: "{{ newrelic_user }}"
     group: "{{ newrelic_group }}"
-    creates: "{{ newrelic_path }}"
+  when: newrelic_jar_exists.stat.exists == false or newrelic_reinstall
 
 - name: NEWRELIC | Configure the Java agent
   template:

@@ -1,22 +1,22 @@
 ---
 
-- name: NEWRELIC | Install required packages
+- name: NEWRELIC SERVERS AGENT | Install required packages
   apt:
     pkg: "{{ item }}"
     state: present
   with_items: "{{ newrelic_required_libs }}"
 
-- name: NEWRELIC | Adding APT key
+- name: NEWRELIC SERVERS AGENT | Adding APT key
   apt_key:
     id: "{{ newrelic_repository_key_id }}"
     url: "{{ newrelic_repository_key_url }}"
 
-- name: NEWRELIC | Add APT repository
+- name: NEWRELIC SERVERS AGENT | Add APT repository
   apt_repository:
     repo: "{{ newrelic_repository_data }}"
     update_cache: yes
 
-- name: NEWRELIC | Installing packages
+- name: NEWRELIC SERVERS AGENT | Installing packages
   apt:
-    pkg: newrelic-sysmond
+    pkg: "{{ newrelic_agent_name }}"
     state: present

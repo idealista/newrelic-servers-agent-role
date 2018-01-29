@@ -1,6 +1,6 @@
 ---
 
-- name: NEWRELIC | Checking for key
+- name: NEWRELIC SERVERS AGENT | Checking for key
   fail:
     msg: "newrelic_license_key has not been defined"
   when: newrelic_license_key|default(False) == False
@@ -10,6 +10,3 @@
 - include: config.yml
 
 - include: service.yml
-
-- include: newrelic.yml
-  when: newrelic_enabled and application|default(False) != False

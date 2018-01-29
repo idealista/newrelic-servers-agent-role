@@ -1,6 +1,6 @@
 ---
 
-- name: restart newrelic
+- name: restart newrelic servers agent
   service:
     name: newrelic-sysmond
     state: restarted

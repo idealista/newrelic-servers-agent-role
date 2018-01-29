@@ -1,17 +1,17 @@
 ---
 
-- name: NEWRELIC | Configuring module
+- name: NEWRELIC SERVERS AGENT | Configuring module
   template:
     src: "{{ item }}.j2"
     dest: "/{{ item }}"
     owner: "{{ newrelic_user }}"
     group: "{{ newrelic_group }}"
     mode: "0640"
-  notify: restart newrelic
+  notify: restart newrelic servers agent
   with_items:
     - "etc/newrelic/nrsysmond.cfg"
 
-- name: NEWRELIC | Configuring user groups
+- name: NEWRELIC SERVERS AGENT | Configuring user groups
   user:
     name: "{{ newrelic_user }}"
     groups: "{{ newrelic_groups|join(',') }}"

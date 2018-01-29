@@ -1,5 +1,5 @@
 ![Logo](logo.gif)
-[![Build Status](https://travis-ci.org/idealista/newrelic-servers-agent-role.png)](https://travis-ci.org/idealista/newrelic-role)
+[![Build Status](https://travis-ci.org/idealista/newrelic-servers-agent-role.png)](https://travis-ci.org/idealista/newrelic-servers-agent-role)
 # Newrelic Servers agent ansible role
 
 This ansible role installs Newrelic Servers agent in a debian environment.

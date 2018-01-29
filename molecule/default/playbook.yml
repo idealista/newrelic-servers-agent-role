@@ -3,4 +3,4 @@
 - name: Converge
   hosts: newrelic
   roles:
-    - role: newrelic-servers-agent-role
+    - newrelic-servers-agent-role

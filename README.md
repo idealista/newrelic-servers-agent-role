@@ -33,7 +33,7 @@ Create or add to your roles dependency file (e.g requirements.yml):
 ```
 - src: idealista.newrelic-servers-agent-role
   version: 1.0.0
-  name: newrelic
+  name: newrelic-servers-agent
 ```
 
 Install the role with ansible-galaxy command:

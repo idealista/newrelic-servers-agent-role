@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a ch
 ## [Unreleased](https://github.com/idealista/newrelic-servers-agent-role/tree/develop)
 ### Changed
 - *Role and repository name changed to newrelic-servers-agent-role* @sorobon
-- *Migration to molecule 2.x*
+- *Migration to molecule 2.x* @sorobon
 ### Removed
 - *Java agent installation* @sorobon
 

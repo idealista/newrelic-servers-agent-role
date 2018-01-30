@@ -57,7 +57,7 @@ Look to the [defaults](defaults/main.yml) properties file to see the possible co
 ## Testing
 
 ```sh
-molecule test after review with detailed words and vedio, by paypal without the pp fee, is that okay for you ?
+molecule test
 ```
 
 ## Built With

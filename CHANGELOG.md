@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/) and [Keep a changelog](https://github.com/olivierlacan/keep-a-changelog).
 
 ## [Unreleased](https://github.com/idealista/newrelic-servers-agent-role/tree/develop)
+
+## [2.0.0](https://github.com/idealista/newrelic-servers-agent-role/releases/tag/2.0.0)
 ### Changed
 - *Role and repository name changed to newrelic-servers-agent-role* @sorobon
 - *Migration to molecule 2.x* @sorobon

@@ -1,8 +1,8 @@
 ![Logo](logo.gif)
-[![Build Status](https://travis-ci.org/idealista/newrelic-role.png)](https://travis-ci.org/idealista/newrelic-role)
-# newrelic Ansible role
+[![Build Status](https://travis-ci.org/idealista/newrelic-servers-agent-role.png)](https://travis-ci.org/idealista/newrelic-servers-agent-role)
+# Newrelic Servers agent ansible role
 
-This ansible role installs newrelic agent in a debian environment.
+This ansible role installs Newrelic Servers agent in a debian environment.
 
 - [Getting Started](#getting-started)
 	- [Prerequisities](#prerequisities)
@@ -21,19 +21,19 @@ These instructions will get you a copy of the role for your ansible playbook. On
 
 ### Prerequisities
 
-Ansible 2.2.1.0 version installed.
+Ansible 2.4.0.0 version installed.
 Inventory destination should be a Debian environment.
 
-For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Vagrant](https://www.vagrantup.com/) as driver (with [landrush](https://github.com/vagrant-landrush/landrush) plugin) and [VirtualBox](https://www.virtualbox.org/) as provider.
+For testing purposes, [Molecule](https://molecule.readthedocs.io/) with [Vagrant](https://www.vagrantup.com/) as driver (with [hostsupdater](https://github.com/cogitatio/vagrant-hostsupdater) plugin) and [VirtualBox](https://www.virtualbox.org/) as provider.
 
 ### Installing
 
 Create or add to your roles dependency file (e.g requirements.yml):
 
 ```
-- src: idealista.newrelic-role
+- src: idealista.newrelic-servers-agent-role
   version: 1.0.0
-  name: newrelic
+  name: newrelic-servers-agent
 ```
 
 Install the role with ansible-galaxy command:
@@ -47,7 +47,7 @@ Use in a playbook:
 ```
 - hosts: someserver
   roles:
-    - role: newrelic
+    - role: newrelic-servers-agent
 ```
 
 ## Usage
@@ -62,11 +62,11 @@ molecule test
 
 ## Built With
 
-![Ansible](https://img.shields.io/badge/ansible-2.2.1.0-green.svg)
+![Ansible](https://img.shields.io/badge/ansible-2.4.0.0-green.svg)
 
 ## Versioning
 
-For the versions available, see the [tags on this repository](https://github.com/idealista/newrelic-role/tags).
+For the versions available, see the [tags on this repository](https://github.com/idealista/newrelic-servers-agent-role/tags).
 
 Additionaly you can see what change in each version in the [CHANGELOG.md](CHANGELOG.md) file.
 
@@ -74,7 +74,7 @@ Additionaly you can see what change in each version in the [CHANGELOG.md](CHANGE
 
 * **Idealista** - *Work with* - [idealista](https://github.com/idealista)
 
-See also the list of [contributors](https://github.com/idealista/newrelic-role/contributors) who participated in this project.
+See also the list of [contributors](https://github.com/idealista/newrelic-servers-agent-role/contributors) who participated in this project.
 
 ## License
 

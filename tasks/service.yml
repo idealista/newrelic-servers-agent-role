@@ -1,7 +1,7 @@
 ---
 
-- name: NEWRELIC | Configuring service
+- name: NEWRELIC SERVERS AGENT | Configuring service
   systemd:
-    name: newrelic-sysmond
+    name: "{{ newrelic_agent_name }}"
     state: "{{ newrelic_service_state }}"
     enabled: "{{ newrelic_service_enabled }}"

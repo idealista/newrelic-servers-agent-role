@@ -1,5 +1,0 @@
----
-
-- hosts: newrelic
-  roles:
-    - newrelic-role

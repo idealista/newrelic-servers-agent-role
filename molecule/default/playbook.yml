@@ -1,0 +1,6 @@
+---
+
+- name: Converge
+  hosts: newrelic
+  roles:
+    - newrelic-servers-agent-role
